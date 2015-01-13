@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{8C112BB7-0280-4431-9B38-682FA82CAE1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePassword", "ChangePassword\ChangePassword.csproj", "{5C19264A-011A-409C-B134-B890A89D31B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8C112BB7-0280-4431-9B38-682FA82CAE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C112BB7-0280-4431-9B38-682FA82CAE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C112BB7-0280-4431-9B38-682FA82CAE1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C19264A-011A-409C-B134-B890A89D31B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C19264A-011A-409C-B134-B890A89D31B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C19264A-011A-409C-B134-B890A89D31B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C19264A-011A-409C-B134-B890A89D31B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
