@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangePassword", "ChangePassword\ChangePassword.csproj", "{5C19264A-011A-409C-B134-B890A89D31B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateCommandSample", "DelegateCommandSample\DelegateCommandSample.csproj", "{BD1003D7-B1E5-4639-A549-176923EB25D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5C19264A-011A-409C-B134-B890A89D31B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C19264A-011A-409C-B134-B890A89D31B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C19264A-011A-409C-B134-B890A89D31B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1003D7-B1E5-4639-A549-176923EB25D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1003D7-B1E5-4639-A549-176923EB25D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1003D7-B1E5-4639-A549-176923EB25D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1003D7-B1E5-4639-A549-176923EB25D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
