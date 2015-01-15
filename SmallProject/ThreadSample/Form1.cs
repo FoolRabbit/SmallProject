@@ -169,6 +169,20 @@ namespace ThreadSample
 
         #endregion
 
+        #region 线程方法4
+        
+        #endregion
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ThreadClass2 tc = new ThreadClass2();
+
+            tc.DataFrom = 3;
+            tc.TextObj = textBox1;
+            tc.InitThread();
+            tc.StartThread();
+        }
+
     }
 
     public class ThreadClass
@@ -240,5 +254,144 @@ namespace ThreadSample
                 TextObj.BeginInvoke(new Action(delegate { TextObj.Text = VarData; }));
             }));
         }
+    }
+
+
+    public class ThreadClass2
+    {
+        #region Fields
+
+        /// <summary>
+        /// 数据源
+        /// </summary>
+        public object DataFrom;
+
+        /// <summary>
+        /// 文本框
+        /// </summary>
+        public Control TextObj;
+
+        /// <summary>
+        /// 取得数据
+        /// </summary>
+        private List<string> DataList;
+
+        /// <summary>
+        /// 数据变量
+        /// </summary>
+        private string VarData;
+
+        #endregion
+
+        #region 线程
+
+        private Thread Thread1;
+
+        private Thread Thread2;
+
+        private Thread Thread3;
+
+        private Thread Thread4;
+
+        #endregion
+
+        #region Methods
+
+        #region public
+
+        public void InitThread()
+        {
+            GetDataHandler getdata = new GetDataHandler(GetData);
+            Thread1 = new Thread(new ThreadStart(getdata));
+
+            DealDataHandler dealdata = new DealDataHandler(DealData);
+            Thread2 = new Thread(new ThreadStart(dealdata));
+
+            ConvertDataHandler convertdata = new ConvertDataHandler(ConvertData);
+            Thread3 = new Thread(new ThreadStart(convertdata));
+
+            ShowDataHandler showdata = new ShowDataHandler(ShowData);
+            Thread4 = new Thread(new ThreadStart(showdata));
+        }
+
+        public void StartThread()
+        {
+            Thread1.Start();
+
+            while(Thread1.IsAlive)
+            {
+                Thread.Sleep(10);
+            }
+
+            Thread2.Start();
+
+            while (Thread2.IsAlive)
+            {
+                Thread.Sleep(10);
+            }
+
+
+            Thread3.Start();
+
+            while (Thread3.IsAlive)
+            {
+                Thread.Sleep(10);
+            }
+
+            Thread4.Start();
+
+            while (Thread4.IsAlive)
+            {
+                Thread.Sleep(10);
+            }
+        } 
+
+        #endregion
+
+        #region private
+
+        private void GetData()
+        {
+            int count = Convert.ToInt32(DataFrom);
+            DataList = new List<string>();
+            for (int i = 1; i <= count; i++)
+            {
+                DataList.Add(i.ToString());
+            }
+        }
+
+        private void DealData()
+        {
+            for (int i = 0; i < DataList.Count; i++)
+            {
+                DataList[i] = "Four" + DataList[i];
+            }
+        }
+
+        private void ConvertData()
+        {
+            VarData = string.Join(",", DataList);
+        }
+
+        private void ShowData()
+        {
+            TextObj.BeginInvoke(new Action(delegate { TextObj.Text = VarData; }));
+        }
+
+        #endregion
+
+        #endregion
+
+        #region delegate
+
+        private delegate void GetDataHandler();
+
+        private delegate void DealDataHandler();
+
+        private delegate void ConvertDataHandler();
+
+        private delegate void ShowDataHandler();
+
+        #endregion
     }
 }
